@@ -15,18 +15,24 @@
    //************* Variables *************
 
 	// alert("Thank you for loading the NeedIt form.   When you close this alert you will be able to interact with the form.");
-	g_form.addDecoration('short_description', 'icon-star', 'Preferred Member', 'color-green');
+	g_form.addDecoration('short_description', 'icon-star', 'TLDR', 'color-green');
 	g_form.flash("short_description", "#6495ED", 0);
 	g_form.flash("number","#8A2BE2",0);
 	var recfor = g_form.getDisplayValue('u_requested_for');
-	g_form.addFormMessage('This form was updated - '+ recfor, 'warning');}]]></script>
+	g_form.addFormMessage('This form was loaded - '+ recfor, 'warning');}
+	g_form.flash('u_what_needed','#ffa500',0)
+	var old_descr = g_form.getValue('description');
+	g_form.setValue('description', 'Was: ' + old_descr + ' (or) replace this with appropriate text');
+
+	var oldLabel = g_form.getLabelOf('description');
+    g_form.setLabelOf('description', oldLabel + ' (Customer visible)');]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-02-08 17:07:03</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>139133b10fb43200cd674f8ce1050efb</sys_id>
-        <sys_mod_count>33</sys_mod_count>
+        <sys_mod_count>52</sys_mod_count>
         <sys_name>NeedIt onLoad Example</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
@@ -34,7 +40,7 @@
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_script_client_139133b10fb43200cd674f8ce1050efb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-03-08 01:17:50</sys_updated_on>
+        <sys_updated_on>2024-03-18 22:04:44</sys_updated_on>
         <table>x_58872_needit_needit</table>
         <type>onLoad</type>
         <ui_type>10</ui_type>
